@@ -1,7 +1,7 @@
 package main
 
 import (
-	termometricScale "dio/termometric-scale"
+	divisionPackage "dio/division"
 	"fmt"
 )
 
@@ -9,6 +9,10 @@ import (
 // the <icon src="AllIcons.Actions.Execute"/> icon in the gutter and select the <b>Run</b> menu item from here.</p>
 
 func main() {
-	fmt.Sprintln(termometricScale.ConvertFromCelsiusToKelvin(12)) //TIP <p>Press <shortcut actionId="ShowIntentionActions"/> when your caret is at the underlined text
-	// to see how GoLand suggests fixing the warning.</p><p>Alternatively, if available, click the lightbulb to view possible fixes.</p>
+	populatedArray := divisionPackage.InitiatePopulatedArray(100)
+	for _, value := range populatedArray {
+		if divisionPackage.Rest(value, 3) {
+			fmt.Println(value)
+		}
+	}
 }
